@@ -9,10 +9,18 @@ Blogs
 <div ng-controller="BlogListController">
 	<div class="row">
 		<div class="col-xs-3">
-			<input type="text" ng-model="per_page"/>
+			<select ng-model="per_page"/>
+				<option value="2">2</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+				<option value="10">10</option>
+				<option value="20">20</option>
+				<option value="50">50</option>
+				<option value="100">100</option>
+			</select>
 		</div>
 	</div>
-	<table class="table">
+	<table class="table table-striped table-hover">
 		<tr>
 			<th><a href="javascript:void(0);" ng-click="order('title')">Title <i  ng-if="field == 'title'" class="fa" ng-class="{'fa-sort-asc':isReverse, 'fa-sort-desc':!isReverse}"></i></a></th>
 			<th><a href="javascript:void(0);" ng-click="order('content')">Content <i ng-if="field == 'content'" class="fa" ng-class="{'fa-sort-asc':isReverse, 'fa-sort-desc':!isReverse}"></i></a></th>

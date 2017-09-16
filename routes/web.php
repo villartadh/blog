@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home/home');
-});
+Route::get('/', 'PageController@getIndex');
+Route::get('/about', 'PageController@getAbout');
+Route::get('/contact', 'PageController@getContact');
 
 Auth::routes();
 
@@ -27,9 +27,6 @@ Route::group(['middleware'=>'auth'], function(){
 		Route::get('/all-blogs', 'BlogController@all');
 		Route::get('/blogs/{id}', 'BlogController@getBlog');
 	});
-});
-Route::get('sample', function(){
-	return view('sample');
 });
 
 Route::group(['prefix'=>'admin'], function(){

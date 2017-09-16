@@ -80,4 +80,5 @@ angular.module('app')
 		$scope.paginate();
 		$scope.loadData(1);
 	});
+	
 });
